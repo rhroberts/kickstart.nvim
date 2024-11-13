@@ -190,6 +190,10 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Buffer navigation
+vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', { desc = 'Go to the next buffer' })
+vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', { desc = 'Go to the previous buffer' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -713,6 +717,8 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
       },
     },
   },
@@ -785,7 +791,6 @@ require('lazy').setup({
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
           ['<C-y>'] = cmp.mapping.confirm { select = true },
-
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
           --['<CR>'] = cmp.mapping.confirm { select = true },

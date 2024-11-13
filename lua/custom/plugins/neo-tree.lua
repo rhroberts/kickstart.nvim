@@ -7,4 +7,16 @@ return {
     'MunifTanjim/nui.nvim',
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
+  keys = { -- Example mapping to toggle outline
+    { '<leader>l', '<cmd>Neotree toggle<CR>', desc = 'Toggle neo-tree' },
+  },
+  opts = {
+    close_if_last_window = true,
+    window = {
+      mappings = {
+        ['l'] = 'open',
+        ['h'] = 'close_node',
+      },
+    },
+  },
 }
