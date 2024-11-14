@@ -249,15 +249,7 @@ require('lazy').setup({
   -- See `:help gitsigns` to understand what the configuration keys do
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
+    opts = {},
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
@@ -719,6 +711,7 @@ require('lazy').setup({
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
         javascript = { 'prettier' },
         typescript = { 'prettier' },
+        python = { 'black' },
       },
     },
   },
@@ -969,6 +962,10 @@ require('lazy').setup({
     },
   },
 })
+
+-- my keymaps
+-- not sure why this one doesn't work in plugin config...
+vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<cr>', { desc = 'Toggle [G]it [B]lame' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
