@@ -612,7 +612,7 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -620,7 +620,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
@@ -966,6 +966,10 @@ require('lazy').setup({
 -- my keymaps
 -- not sure why this one doesn't work in plugin config...
 vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<cr>', { desc = 'Toggle [G]it [B]lame' })
+-- should probably modularize this stuff
+vim.keymap.set('n', '<leader>bd', '<cmd>Bdelete<cr>', { desc = '[B]uffer [D]elete without affecting window layout' })
+vim.keymap.set('n', '<leader>bw', '<cmd>Bwipeout<cr>', { desc = '[B]uffer [W]ipeout without affecting window layout' })
+vim.keymap.set('n', '<leader>ba', '<cmd>%Bdelete<cr>', { desc = '[B]uffers [D]elete all' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
