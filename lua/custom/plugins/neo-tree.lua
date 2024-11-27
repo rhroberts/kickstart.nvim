@@ -18,5 +18,10 @@ return {
         ['h'] = 'close_node',
       },
     },
+    filesystem = {
+      follow_current_file = {
+        enabled = true,
+      },
+    },
   },
 }
