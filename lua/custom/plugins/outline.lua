@@ -7,7 +7,8 @@ return {
   },
   opts = {
     outline_window = {
-      width = 12,
+      width = 40,
+      relative_width = false,
     },
   },
 }

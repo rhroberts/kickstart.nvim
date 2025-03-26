@@ -17,6 +17,7 @@ return {
         ['l'] = 'open',
         ['h'] = 'close_node',
       },
+      width = 40,
     },
     filesystem = {
       follow_current_file = {
