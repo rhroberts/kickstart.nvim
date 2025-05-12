@@ -103,9 +103,10 @@ return {
       vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
     end
 
-    dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-    dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-    dap.listeners.before.event_exited['dapui_config'] = dapui.close
+    -- the below are nice but often unpredictable
+    -- dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+    -- dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+    -- dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- -- Install golang specific config
     -- require('dap-go').setup {
@@ -130,7 +131,7 @@ return {
     }
     dap.configurations.typescript = {
       {
-        name = 'Attach to Remote',
+        name = 'Attach to Application Debugging Port',
         type = 'pwa-node',
         request = 'attach',
         remoteRoot = '/app',
@@ -141,6 +142,20 @@ return {
         restart = true,
         cwd = '${workspaceFolder}',
         skipFiles = { '<node_internals>/**' },
+      },
+      {
+        name = 'Attach to Test Debugging Port',
+        type = 'pwa-node',
+        request = 'attach',
+        remoteRoot = '/app',
+        localRoot = '${workspaceFolder}',
+        protocol = 'inspector',
+        address = 'localhost',
+        port = 9230, -- Default Node.js debugging port
+        restart = true,
+        cwd = '${workspaceFolder}',
+        skipFiles = { '<node_internals>/**' },
+        -- processId = require('dap.utils').pick_process, -- Let you pick the process
       },
     }
   end,
