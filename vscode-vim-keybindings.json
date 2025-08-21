@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+shift+j",
+    "command": "workbench.action.terminal.focus",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "vim.active && vim.mode == 'Normal'"
+  }
+]
