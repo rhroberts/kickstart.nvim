@@ -63,3 +63,7 @@ opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 opt.scrolloff = 10
+
+-- Set fish as the default shell for terminal
+opt.shell = '/opt/homebrew/bin/fish'
+
