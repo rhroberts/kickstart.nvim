@@ -2,7 +2,7 @@ return {
   'f-person/git-blame.nvim',
   event = 'VeryLazy',
   keys = {
-    { '<leader>gb', '<cmd>GitBlameToggle<cr>', desc = 'Toggle [G]it [B]lame' },
+    { '<leader>gb', '<cmd>GitBlameToggle<cr>', desc = 'Toggle [g]it [b]lame' },
   },
   opts = {
     enabled = false, -- if you want to enable the plugin
