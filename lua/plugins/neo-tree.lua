@@ -26,10 +26,45 @@ return {
       },
       use_libuv_file_watcher = true,
       scan_mode = 'deep',
+      bind_to_cwd = false,
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+      },
     },
     git_status = {
       window = {
         position = 'float',
+      },
+    },
+    sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
+    source_selector = {
+      winbar = false,
+      statusline = false,
+      sources = {
+        { source = 'filesystem' },
+        { source = 'git_status' },
+      },
+    },
+    event_handlers = {
+      {
+        event = 'git_status_changed',
+        handler = function()
+          require('neo-tree.sources.manager').refresh('filesystem')
+          require('neo-tree.sources.manager').refresh('git_status')
+        end,
+      },
+      {
+        event = 'file_added',
+        handler = function()
+          require('neo-tree.sources.manager').refresh('filesystem')
+        end,
+      },
+      {
+        event = 'file_deleted',
+        handler = function()
+          require('neo-tree.sources.manager').refresh('filesystem')
+        end,
       },
     },
     auto_clean_after_session_restore = true,
