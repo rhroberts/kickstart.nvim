@@ -71,7 +71,7 @@ return {
       },
     },
     commands = {
-      refresh_git = function(state)
+      refresh_git = function()
         require('neo-tree.sources.manager').refresh 'filesystem'
       end,
     },
