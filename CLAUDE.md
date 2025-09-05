@@ -20,4 +20,7 @@ stylua .
 - Keep plugin files focused on a single plugin or tightly related functionality
 - Use descriptive filenames that match the plugin's purpose
 - Keep `init.lua` clean
-- when adding new keybindings, check if they conflict with any other keybindings
+
+### Misc.
+
+- When adding new keybindings, always check if they conflict with any other keybindings
