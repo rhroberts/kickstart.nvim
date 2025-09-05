@@ -37,14 +37,56 @@ return {
         },
       },
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-        { '<leader>b', group = '[B]uffer' },
+        {
+          '<leader>c',
+          group = '[c]ode',
+          icon = { icon = '󰅴', color = 'cyan' },
+          mode = { 'n', 'x' },
+        },
+        {
+          '<leader>d',
+          group = '[d]ocument',
+          icon = { icon = '󰈙', color = 'blue' },
+        },
+        {
+          '<leader>r',
+          group = '[r]ename',
+          icon = { icon = '󰤌', color = 'orange' },
+        },
+        {
+          '<leader>s',
+          group = '[s]earch',
+          icon = { icon = '󰍉', color = 'green' },
+        },
+        {
+          '<leader>w',
+          group = '[w]orkspace',
+          icon = { icon = '󰉋', color = 'purple' },
+        },
+        {
+          '<leader>t',
+          group = '[t]oggle/Terminal',
+          icon = { icon = '󰆍', color = 'red' },
+        },
+        {
+          '<leader>h',
+          group = 'Git [h]unk',
+          icon = { icon = '󰊢', color = 'orange' },
+          mode = { 'n', 'v' },
+        },
+        {
+          '<leader>b',
+          group = '[b]uffer',
+          icon = { icon = '󰓩', color = 'blue' },
+        },
+        {
+          '<leader>x',
+          group = 'Trouble [x]',
+          icon = { icon = '󰀪', color = 'yellow' },
+        },
+        { '<leader>g', group = 'Git [g]', icon = { icon = '󰊢', color = 'green' } },
+        { '<leader><leader>', icon = '󰓩' }, -- see telescope config
+        { '<leader>/', icon = { icon = '󰍉', color = 'green' } }, -- see telescope config
         {
           '<leader>e',
           function()

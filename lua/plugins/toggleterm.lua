@@ -1,0 +1,36 @@
+return {
+  'akinsho/toggleterm.nvim',
+  version = '*',
+  opts = {
+    size = 20,
+    open_mapping = [[<c-\>]],
+    hide_numbers = true,
+    shade_terminals = true,
+    shading_factor = 2,
+    start_in_insert = true,
+    insert_mappings = true,
+    persist_size = true,
+    direction = 'float',
+    close_on_exit = true,
+    shell = vim.o.shell,
+    float_opts = {
+      border = 'curved',
+      winblend = 0,
+      highlights = {
+        border = 'Normal',
+        background = 'Normal',
+      },
+    },
+  },
+  keys = {
+    { '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[t]oggle [f]loating terminal' },
+    { '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<cr>', desc = '[t]oggle [h]orizontal terminal' },
+    { '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>', desc = '[t]oggle [v]ertical terminal' },
+    { '<leader>t1', '<cmd>1ToggleTerm direction=float<cr>', desc = '[t]erminal [1]' },
+    { '<leader>t2', '<cmd>2ToggleTerm direction=float<cr>', desc = '[t]erminal [2]' },
+    { '<leader>t3', '<cmd>3ToggleTerm direction=float<cr>', desc = '[t]erminal [3]' },
+    { '<leader>ta', '<cmd>ToggleTermToggleAll<cr>', desc = '[t]oggle [a]ll terminals' },
+    { '<leader>tl', '<cmd>TermSelect<cr>', desc = '[t]erminal [l]ist/select' },
+    { '<leader>tn', '<cmd>ToggleTermSetName<cr>', desc = '[t]erminal [n]ame/rename' },
+  },
+}

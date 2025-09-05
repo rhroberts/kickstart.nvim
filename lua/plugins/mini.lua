@@ -3,7 +3,26 @@ return {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.ai').setup({ n_lines = 500 })
-      require('mini.surround').setup()
+      require('mini.icons').setup()
+
+      -- Replace devicons compatibility
+      MiniIcons.mock_nvim_web_devicons()
+      require('mini.surround').setup({
+        custom_surroundings = {
+          ['b'] = {
+            input = { '%*%*.--%*%*' },
+            output = { left = '**', right = '**' },
+          },
+          ['i'] = {
+            input = { '%*[^%*].-[^%*]%*' },
+            output = { left = '*', right = '*' },
+          },
+          ['s'] = {
+            input = { '~~.-~~' },
+            output = { left = '~~', right = '~~' },
+          },
+        },
+      })
       local statusline = require('mini.statusline')
       statusline.setup({ use_icons = vim.g.have_nerd_font })
       ---@diagnostic disable-next-line: duplicate-set-field
