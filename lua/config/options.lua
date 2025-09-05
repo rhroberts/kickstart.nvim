@@ -66,4 +66,3 @@ opt.scrolloff = 10
 
 -- Set fish as the default shell for terminal
 opt.shell = '/opt/homebrew/bin/fish'
-
