@@ -27,20 +27,6 @@ return {
       use_libuv_file_watcher = true,
       scan_mode = 'deep',
     },
-    event_handlers = {
-      {
-        event = 'file_opened',
-        handler = function()
-          require('neo-tree').close_all()
-        end,
-      },
-      {
-        event = 'neo_tree_buffer_enter',
-        handler = function()
-          vim.cmd 'setlocal relativenumber'
-        end,
-      },
-    },
     git_status = {
       window = {
         position = 'float',

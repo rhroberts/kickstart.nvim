@@ -2,7 +2,16 @@ return {
   {
     'petertriho/nvim-scrollbar',
     event = 'BufReadPost',
-    opts = {},
+    opts = {
+      excluded_filetypes = {
+        'cmp_docs',
+        'cmp_menu',
+        'noice',
+        'prompt',
+        'TelescopePrompt',
+        'neo-tree',
+      },
+    },
     dependencies = {
       'lewis6991/gitsigns.nvim',
       'kevinhwang91/nvim-hlslens',

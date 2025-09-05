@@ -2,6 +2,14 @@ return {
   {
     'Bekaboo/dropbar.nvim',
     event = 'VeryLazy',
-    opts = {},
+    opts = {
+      icons = {
+        ui = {
+          bar = {
+            separator = ' ▶ ',
+          },
+        },
+      },
+    },
   },
 }
