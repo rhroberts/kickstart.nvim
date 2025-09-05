@@ -11,7 +11,7 @@ return {
     vim.api.nvim_create_autocmd('User', {
       pattern = 'GitSignsUpdate',
       callback = function()
-        local events = require 'neo-tree.events'
+        local events = require('neo-tree.events')
         events.fire_event(events.GIT_EVENT)
       end,
     })
@@ -72,7 +72,7 @@ return {
     },
     commands = {
       refresh_git = function()
-        require('neo-tree.sources.manager').refresh 'filesystem'
+        require('neo-tree.sources.manager').refresh('filesystem')
       end,
     },
     auto_clean_after_session_restore = true,

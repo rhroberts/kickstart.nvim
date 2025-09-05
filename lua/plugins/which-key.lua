@@ -45,6 +45,15 @@ return {
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>b', group = '[B]uffer' },
+        {
+          '<leader>e',
+          function()
+            vim.cmd('Neotree toggle')
+            vim.cmd('Outline')
+            vim.cmd('wincmd h') -- Go left from outline (to editor window)
+          end,
+          desc = 'Toggle [E]xplorer and Outline',
+        },
       },
     },
   },
