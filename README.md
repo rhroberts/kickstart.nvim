@@ -2,6 +2,19 @@
 
 A modular Neovim configuration built from kickstart.nvim.
 
+## Prerequisites
+
+Before using this configuration, install the following:
+
+- **Neovim** (v0.10+): `brew install neovim`
+- **stylua**: `brew install stylua` (for Lua code formatting)
+- **lefthook**: `brew install lefthook` (for git hooks)
+
+After cloning this configuration, run:
+```bash
+lefthook install
+```
+
 ## Structure
 
 ```
@@ -14,11 +27,18 @@ A modular Neovim configuration built from kickstart.nvim.
     │   ├── autocommands.lua # Autocommands and user commands
     │   └── lazy.lua         # Plugin manager setup
     └── plugins/             # All plugin configurations
+        ├── colorscheme.lua  # Theme configuration
         ├── completion.lua   # Autocompletion (nvim-cmp)
-        ├── editor.lua       # Editor enhancements (treesitter, formatting, etc.)
+        ├── formatting.lua   # Code formatting (stylua, prettier, etc.)
+        ├── gitsigns.lua     # Git integration
         ├── lsp.lua          # Language Server Protocol configuration
+        ├── mini.lua         # Mini.nvim plugins (statusline, surround, etc.)
+        ├── neo-tree.lua     # File explorer
+        ├── scrollbar.lua    # Enhanced scrollbar with git/diagnostic info
         ├── telescope.lua    # Fuzzy finder
-        ├── ui.lua           # UI plugins (colorscheme, which-key)
+        ├── treesitter.lua   # Syntax highlighting
+        ├── which-key.lua    # Keybinding helper
+        ├── winbar.lua       # Breadcrumb navigation
         └── [other plugins]  # Additional plugin configurations
 ```
 
@@ -26,8 +46,11 @@ A modular Neovim configuration built from kickstart.nvim.
 
 - **Modular structure**: Easy to navigate and maintain
 - **All keymaps in one place**: See `lua/config/keymaps.lua`
-- **Organized plugins**: Related functionality grouped together
-- **LSP ready**: Full language server support
+- **Organized plugins**: Each plugin has its own file
+- **LSP ready**: Full language server support with auto-completion
+- **Enhanced UI**: Scrollbar, breadcrumbs, and modern file explorer
+- **Git integration**: Signs in editor, status in scrollbar, and file tree
+- **Auto-formatting**: Code formatting on save and pre-commit hooks
 - **Fuzzy finding**: Telescope for files, buffers, and more
 
 ## Usage
