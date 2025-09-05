@@ -3,10 +3,6 @@ return {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.ai').setup({ n_lines = 500 })
-      require('mini.icons').setup()
-
-      -- Replace devicons compatibility
-      MiniIcons.mock_nvim_web_devicons()
       require('mini.surround').setup({
         custom_surroundings = {
           ['b'] = {

@@ -4,7 +4,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'MunifTanjim/nui.nvim',
-    'echasnovski/mini.nvim',
+    'nvim-tree/nvim-web-devicons',
   },
   init = function()
     -- refresh when gitsigns updates
