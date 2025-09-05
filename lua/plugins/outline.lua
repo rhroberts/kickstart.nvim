@@ -9,6 +9,7 @@ return {
     outline_window = {
       width = 40,
       relative_width = false,
+      winhl = 'Normal:NeoTreeNormal',
     },
   },
 }
