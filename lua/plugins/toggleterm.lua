@@ -3,7 +3,6 @@ return {
   version = '*',
   opts = {
     size = 20,
-    open_mapping = [[<c-\>]],
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,
@@ -23,6 +22,7 @@ return {
     },
   },
   keys = {
+    { '<C-\\>', '<cmd>ToggleTerm<cr>', desc = 'Toggle terminal', mode = { 'n', 't' } },
     { '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc = '[t]oggle [f]loating terminal' },
     { '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<cr>', desc = '[t]oggle [h]orizontal terminal' },
     { '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<cr>', desc = '[t]oggle [v]ertical terminal' },
