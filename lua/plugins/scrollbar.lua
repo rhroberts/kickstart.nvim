@@ -3,6 +3,9 @@ return {
     'petertriho/nvim-scrollbar',
     event = 'BufReadPost',
     opts = {
+      handle = {
+        blend = 30,
+      },
       excluded_filetypes = {
         'cmp_docs',
         'cmp_menu',
