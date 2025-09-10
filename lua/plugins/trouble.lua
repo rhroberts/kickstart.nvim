@@ -1,6 +1,13 @@
 return {
   'folke/trouble.nvim',
-  opts = {},
+  opts = {
+    auto_close = true,
+  },
+  config = function(_, opts)
+    require('trouble').setup(opts)
+    vim.api.nvim_set_hl(0, 'TroubleNormal', { bg = 'NONE' })
+    vim.api.nvim_set_hl(0, 'TroubleNormalNC', { bg = 'NONE' })
+  end,
   cmd = 'Trouble',
   keys = {
     {
