@@ -85,6 +85,11 @@ return {
           icon = { icon = '󰀪', color = 'yellow' },
         },
         { '<leader>g', group = 'Git [g]', icon = { icon = '󰊢', color = 'green' } },
+        {
+          '<leader>p',
+          group = '[p]eek (markdown viewer)',
+          icon = { icon = '󰽛', color = 'blue' },
+        },
         { '<leader><leader>', icon = '󰓩' }, -- see telescope config
         { '<leader>/', icon = { icon = '󰍉', color = 'green' } }, -- see telescope config
         {
