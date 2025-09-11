@@ -69,8 +69,8 @@ return {
           icon = { icon = '󰆍', color = 'red' },
         },
         {
-          '<leader>h',
-          group = 'Git [h]unk',
+          '<leader>gh',
+          group = '[g]it [h]unk',
           icon = { icon = '󰊢', color = 'orange' },
           mode = { 'n', 'v' },
         },

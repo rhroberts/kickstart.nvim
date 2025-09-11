@@ -66,29 +66,29 @@ return {
           end, { desc = 'Jump to previous [c]hange' })
 
           -- Actions
-          map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'Git [h]unk [s]tage' })
-          map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'Git [h]unk [r]eset' })
+          map('n', '<leader>ghs', gitsigns.stage_hunk, { desc = '[g]it [h]unk [s]tage' })
+          map('n', '<leader>ghr', gitsigns.reset_hunk, { desc = '[g]it [h]unk [r]eset' })
 
-          map('v', '<leader>hs', function()
+          map('v', '<leader>ghs', function()
             gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-          end, { desc = 'Git [h]unk [s]tage' })
+          end, { desc = '[g]it [h]unk [s]tage' })
 
-          map('v', '<leader>hr', function()
+          map('v', '<leader>ghr', function()
             gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-          end, { desc = 'Git [h]unk [r]eset' })
+          end, { desc = '[g]it [h]unk [r]eset' })
 
-          map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Git [h]unk [S]tage buffer' })
-          map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Git [h]unk [R]eset buffer' })
-          map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Git [h]unk [p]review' })
-          map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = 'Git [h]unk preview [i]nline' })
+          map('n', '<leader>ghS', gitsigns.stage_buffer, { desc = '[g]it [h]unk [S]tage buffer' })
+          map('n', '<leader>ghR', gitsigns.reset_buffer, { desc = '[g]it [h]unk [R]eset buffer' })
+          map('n', '<leader>ghp', gitsigns.preview_hunk, { desc = '[g]it [h]unk [p]review' })
+          map('n', '<leader>ghi', gitsigns.preview_hunk_inline, { desc = '[g]it [h]unk preview [i]nline' })
 
-          map('n', '<leader>hb', function()
+          map('n', '<leader>ghb', function()
             gitsigns.blame_line({ full = true })
-          end, { desc = 'Git [h]unk [b]lame line' })
+          end, { desc = '[g]it [h]unk [b]lame line' })
 
-          map('n', '<leader>hd', gitsigns.diffthis, { desc = 'Git [h]unk [d]iff against index' })
+          map('n', '<leader>ghd', gitsigns.diffthis, { desc = '[g]it [h]unk [d]iff against index' })
 
-          map('n', '<leader>hq', gitsigns.setqflist, { desc = 'Git [h]unk [q]uickfix list' })
+          map('n', '<leader>ghq', gitsigns.setqflist, { desc = '[g]it [h]unk [q]uickfix list' })
 
           -- Toggles
           map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git [b]lame line' })
@@ -99,5 +99,16 @@ return {
         end,
       })
     end,
+  },
+  {
+    'sindrets/diffview.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
+    cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewToggleFiles', 'DiffviewFocusFiles' },
+    opts = {},
+    keys = {
+      { '<leader>gd', '<cmd>DiffviewOpen<cr>', desc = '[g]it [d]iff view' },
+      { '<leader>gl', '<cmd>DiffviewFileHistory<cr>', desc = '[g]it [l]og/history' },
+      { '<leader>gc', '<cmd>DiffviewClose<cr>', desc = '[g]it diff [c]lose' },
+    },
   },
 }
