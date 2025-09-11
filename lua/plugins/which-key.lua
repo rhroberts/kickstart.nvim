@@ -90,6 +90,51 @@ return {
           group = '[p]eek (markdown viewer)',
           icon = { icon = '󰽛', color = 'blue' },
         },
+        {
+          '<leader>ghs',
+          icon = { icon = '󰐕', color = 'green' },
+          desc = '[g]it [h]unk [s]tage',
+        },
+        {
+          '<leader>ghr',
+          icon = { icon = '󰜉', color = 'red' },
+          desc = '[g]it [h]unk [r]eset',
+        },
+        {
+          '<leader>ghS',
+          icon = { icon = '󰐕', color = 'green' },
+          desc = '[g]it [h]unk [S]tage buffer',
+        },
+        {
+          '<leader>ghR',
+          icon = { icon = '󰜉', color = 'red' },
+          desc = '[g]it [h]unk [R]eset buffer',
+        },
+        {
+          '<leader>ghp',
+          icon = { icon = '󰋊', color = 'blue' },
+          desc = '[g]it [h]unk [p]review',
+        },
+        {
+          '<leader>ghi',
+          icon = { icon = '󰋊', color = 'cyan' },
+          desc = '[g]it [h]unk preview [i]nline',
+        },
+        {
+          '<leader>ghb',
+          icon = { icon = '󰕘', color = 'yellow' },
+          desc = '[g]it [h]unk [b]lame line',
+        },
+        {
+          '<leader>ghd',
+          icon = { icon = '󰦒', color = 'purple' },
+          desc = '[g]it [h]unk [d]iff against index',
+        },
+        {
+          '<leader>ghq',
+          icon = { icon = '󰁨', color = 'orange' },
+          desc = '[g]it [h]unk [q]uickfix list',
+        },
         { '<leader><leader>', icon = '󰓩' }, -- see telescope config
         { '<leader>/', icon = { icon = '󰍉', color = 'green' } }, -- see telescope config
         {
