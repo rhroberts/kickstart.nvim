@@ -30,7 +30,7 @@ return {
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
-      python = { 'black' },
+      python = { 'ruff_format', 'ruff_organize_imports' },
     },
   },
 }
