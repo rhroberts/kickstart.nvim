@@ -146,6 +146,11 @@ return {
           end,
           desc = 'Toggle [E]xplorer and Outline',
         },
+        {
+          '<leader>v',
+          group = '[v]irtual environment',
+          icon = { icon = '󰌠', color = 'yellow' },
+        },
       },
     },
   },
