@@ -26,6 +26,7 @@ return {
         ['l'] = 'open',
         ['h'] = 'close_node',
         ['R'] = 'refresh',
+        ['I'] = 'toggle_gitignored',
       },
       width = 40,
     },
@@ -72,6 +73,10 @@ return {
     },
     commands = {
       refresh_git = function()
+        require('neo-tree.sources.manager').refresh('filesystem')
+      end,
+      toggle_gitignored = function(state)
+        state.filtered_items.hide_gitignored = not state.filtered_items.hide_gitignored
         require('neo-tree.sources.manager').refresh('filesystem')
       end,
     },
