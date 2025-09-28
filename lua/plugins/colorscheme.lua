@@ -42,6 +42,17 @@ return {
       -- Make floating window borders transparent
       vim.cmd.hi('FloatBorder guibg=NONE guifg=#565f89')
       vim.cmd.hi('LspFloatWinBorder guibg=NONE')
+
+      -- Make status line and tab line transparent
+      vim.cmd.hi('StatusLine guibg=NONE')
+      vim.cmd.hi('StatusLineNC guibg=NONE')
+      vim.cmd.hi('TabLine guibg=NONE')
+      vim.cmd.hi('TabLineFill guibg=NONE')
+      vim.cmd.hi('TabLineSel guibg=NONE')
+
+      -- Only override the inactive statusline to use a color from the theme
+      local colors = require('tokyonight.colors').setup()
+      vim.cmd.hi('MiniStatuslineInactive guibg=' .. colors.bg_dark .. ' guifg=' .. colors.comment)
     end,
   },
 }
