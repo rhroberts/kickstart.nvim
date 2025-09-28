@@ -29,13 +29,19 @@ return {
 
       -- Make nvim-cmp completion windows transparent
       vim.cmd.hi('Pmenu guibg=NONE')
-      vim.cmd.hi('PmenuSel guibg=NONE')
+      vim.cmd.hi('PmenuSel guibg=#3b4261 guifg=#c0caf5') -- Add visible background for selected item
       vim.cmd.hi('PmenuSbar guibg=NONE')
       vim.cmd.hi('PmenuThumb guibg=NONE')
       vim.cmd.hi('CmpPmenu guibg=NONE')
-      vim.cmd.hi('CmpPmenuSel guibg=NONE')
+      vim.cmd.hi('CmpItemAbbrMatchFuzzy guifg=#bb9af7')
+      vim.cmd.hi('CmpItemAbbrMatch guifg=#7dcfff')
+      vim.cmd.hi('CmpItemKind guifg=#9ece6a')
       vim.cmd.hi('CmpDoc guibg=NONE')
       vim.cmd.hi('CmpDocBorder guibg=NONE')
+
+      -- Make floating window borders transparent
+      vim.cmd.hi('FloatBorder guibg=NONE guifg=#565f89')
+      vim.cmd.hi('LspFloatWinBorder guibg=NONE')
     end,
   },
 }
