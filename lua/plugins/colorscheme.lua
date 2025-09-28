@@ -26,6 +26,16 @@ return {
       vim.cmd.hi('WhichKeyNormal guibg=NONE')
       vim.cmd.hi('WhichKeyFloat guibg=NONE')
       vim.cmd.hi('NormalFloat guibg=NONE')
+
+      -- Make nvim-cmp completion windows transparent
+      vim.cmd.hi('Pmenu guibg=NONE')
+      vim.cmd.hi('PmenuSel guibg=NONE')
+      vim.cmd.hi('PmenuSbar guibg=NONE')
+      vim.cmd.hi('PmenuThumb guibg=NONE')
+      vim.cmd.hi('CmpPmenu guibg=NONE')
+      vim.cmd.hi('CmpPmenuSel guibg=NONE')
+      vim.cmd.hi('CmpDoc guibg=NONE')
+      vim.cmd.hi('CmpDocBorder guibg=NONE')
     end,
   },
 }
