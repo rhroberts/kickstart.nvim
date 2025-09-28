@@ -6,6 +6,9 @@ return {
       vim.cmd.colorscheme('tokyonight-night')
       vim.cmd.hi('Comment gui=none')
 
+      -- Get colors from the theme
+      local colors = require('tokyonight.colors').setup()
+
       -- Make neo-tree and outline completely transparent
       vim.cmd.hi('NeoTreeNormal guibg=NONE')
       vim.cmd.hi('NeoTreeNormalNC guibg=NONE')
@@ -27,20 +30,20 @@ return {
       vim.cmd.hi('WhichKeyFloat guibg=NONE')
       vim.cmd.hi('NormalFloat guibg=NONE')
 
-      -- Make nvim-cmp completion windows transparent
+      -- Make nvim-cmp completion windows transparent with theme colors
       vim.cmd.hi('Pmenu guibg=NONE')
-      vim.cmd.hi('PmenuSel guibg=#3b4261 guifg=#c0caf5') -- Add visible background for selected item
+      vim.cmd.hi('PmenuSel guibg=' .. colors.bg_highlight .. ' guifg=' .. colors.fg)
       vim.cmd.hi('PmenuSbar guibg=NONE')
       vim.cmd.hi('PmenuThumb guibg=NONE')
       vim.cmd.hi('CmpPmenu guibg=NONE')
-      vim.cmd.hi('CmpItemAbbrMatchFuzzy guifg=#bb9af7')
-      vim.cmd.hi('CmpItemAbbrMatch guifg=#7dcfff')
-      vim.cmd.hi('CmpItemKind guifg=#9ece6a')
+      vim.cmd.hi('CmpItemAbbrMatchFuzzy guifg=' .. colors.magenta)
+      vim.cmd.hi('CmpItemAbbrMatch guifg=' .. colors.cyan)
+      vim.cmd.hi('CmpItemKind guifg=' .. colors.green)
       vim.cmd.hi('CmpDoc guibg=NONE')
       vim.cmd.hi('CmpDocBorder guibg=NONE')
 
-      -- Make floating window borders transparent
-      vim.cmd.hi('FloatBorder guibg=NONE guifg=#565f89')
+      -- Make floating window borders transparent with theme colors
+      vim.cmd.hi('FloatBorder guibg=NONE guifg=' .. colors.comment)
       vim.cmd.hi('LspFloatWinBorder guibg=NONE')
 
       -- Make status line and tab line transparent
@@ -51,7 +54,6 @@ return {
       vim.cmd.hi('TabLineSel guibg=NONE')
 
       -- Only override the inactive statusline to use a color from the theme
-      local colors = require('tokyonight.colors').setup()
       vim.cmd.hi('MiniStatuslineInactive guibg=' .. colors.bg_dark .. ' guifg=' .. colors.comment)
     end,
   },

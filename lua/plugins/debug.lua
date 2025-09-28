@@ -91,9 +91,10 @@ return {
       },
     })
 
-    -- Change breakpoint icons
-    vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
-    vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })
+    -- Change breakpoint icons using theme colors
+    local colors = require('tokyonight.colors').setup()
+    vim.api.nvim_set_hl(0, 'DapBreak', { fg = colors.error })
+    vim.api.nvim_set_hl(0, 'DapStop', { fg = colors.warning })
     local breakpoint_icons = vim.g.have_nerd_font
         and {
           Breakpoint = '',
