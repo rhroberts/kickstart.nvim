@@ -30,6 +30,15 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
+      -- Patch make_position_params to provide default position_encoding until telescope releases fix
+      local orig_make_position_params = vim.lsp.util.make_position_params
+      vim.lsp.util.make_position_params = function(window, offset_encoding)
+        if offset_encoding == nil then
+          offset_encoding = 'utf-16'
+        end
+        return orig_make_position_params(window, offset_encoding)
+      end
+
       -- Configure LSP hover and signature help windows with borders
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
       function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -223,7 +232,6 @@ return {
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            server.offset_encoding = 'utf-16'
             require('lspconfig')[server_name].setup(server)
           end,
         },
