@@ -45,8 +45,8 @@ return {
         },
         {
           '<leader>d',
-          group = '[d]ocument',
-          icon = { icon = '󰈙', color = 'blue' },
+          group = '[d]ebug',
+          icon = { icon = '󰃤', color = 'red' },
         },
         {
           '<leader>r',
