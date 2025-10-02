@@ -5,6 +5,9 @@ vim.g.maplocalleader = ' '
 -- Enable Nerd Font support
 vim.g.have_nerd_font = true
 
+-- Set Python provider
+vim.g.python3_host_prog = '/Users/rusty/.local/bin/pynvim-python'
+
 -- Load configuration modules
 require('config.options')
 require('config.keymaps')

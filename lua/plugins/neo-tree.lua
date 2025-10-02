@@ -20,6 +20,7 @@ return {
     { '<leader>l', '<cmd>Neotree toggle<CR>', desc = 'Toggle neo-tree' },
   },
   opts = {
+    log_level = 'info',
     close_if_last_window = true,
     window = {
       mappings = {

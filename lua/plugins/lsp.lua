@@ -30,15 +30,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
-      -- Patch make_position_params to provide default position_encoding until telescope releases fix
-      local orig_make_position_params = vim.lsp.util.make_position_params
-      vim.lsp.util.make_position_params = function(window, offset_encoding)
-        if offset_encoding == nil then
-          offset_encoding = 'utf-16'
-        end
-        return orig_make_position_params(window, offset_encoding)
-      end
-
       -- Configure LSP hover and signature help windows with borders
       local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
       function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
