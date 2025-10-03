@@ -11,7 +11,7 @@ vim.keymap.set('n', '[x', '?^<<<<<<<CR>', { desc = 'Previous Conflict' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [q]uickfix list' })
-vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'Show diagnostic floating window' })
+vim.keymap.set('n', '<leader>xl', vim.diagnostic.open_float, { desc = 'Diagnostic [l]ine' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
